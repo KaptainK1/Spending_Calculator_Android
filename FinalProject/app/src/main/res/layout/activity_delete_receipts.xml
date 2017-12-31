@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/colorProjectBackground"
+    android:layout_height="match_parent"
+    tools:context="dev.android.dhoffman.finalproject.DeleteReceipts">
+
+    <android.support.constraint.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.05"
+        android:orientation="vertical"
+        android:id="@+id/guide" />
+
+    <android.support.constraint.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.15"
+        android:orientation="horizontal"
+        android:id="@+id/guideH" />
+
+    <android.support.constraint.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.95"
+        android:orientation="vertical"
+        android:id="@+id/guideRight" />
+
+    <TextView
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:id="@+id/title"
+        android:textSize="25sp"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:background="@color/colorAccent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Delete Receipts" />
+
+    <LinearLayout
+        app:layout_constraintTop_toBottomOf="@id/guideH"
+        app:layout_constraintLeft_toLeftOf="@id/guide"
+        android:orientation="horizontal"
+        android:id="@+id/daySection"
+        android:paddingBottom="5sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="Enter Day Number:"
+            android:id="@+id/tagDay"
+            android:textSize="20sp"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingEnd="10sp"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="1"
+            android:id="@+id/day"
+            android:inputType="number" />
+    </LinearLayout>
+
+    <LinearLayout
+        app:layout_constraintTop_toBottomOf="@id/daySection"
+        app:layout_constraintLeft_toLeftOf="@id/guide"
+        android:id="@+id/monthSection"
+        android:paddingBottom="5sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:text="Enter Month Number:"
+            android:id="@+id/tagMonth"
+            android:paddingEnd="10sp"
+            android:textSize="20sp"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="1"
+            android:id="@+id/month"
+            android:inputType="number" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        app:layout_constraintTop_toBottomOf="@+id/monthSection"
+        app:layout_constraintLeft_toLeftOf="@id/guide"
+        android:paddingBottom="5sp"
+        android:id="@+id/yearSection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:text="Enter Year Number:"
+            android:id="@+id/tagYear"
+            android:textColor="@color/colorPrimaryDark"
+            android:paddingEnd="10sp"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="2018"
+            android:inputType="number"
+            android:id="@+id/year" />
+    </LinearLayout>
+
+    <LinearLayout
+        app:layout_constraintTop_toBottomOf="@+id/yearSection"
+        app:layout_constraintLeft_toLeftOf="@id/guide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="Enter Place of Purchase:"
+            android:id="@+id/tagPlace"
+            android:paddingEnd="10sp"
+            android:textSize="20sp"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Amazon"
+            android:inputType="text"
+            android:id="@+id/place"
+            />
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="0sp"
+        android:layout_height="50sp"
+        app:layout_constraintBottom_toTopOf="@+id/nav"
+        app:layout_constraintLeft_toLeftOf="@id/guide"
+        app:layout_constraintRight_toRightOf="@id/guideRight"
+        android:background="@drawable/date_button"
+        android:textStyle="bold"
+        android:onClick="onDelete"
+        android:text="Delete" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="3"
+        android:paddingTop="10sp"
+        android:id="@+id/nav"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="70sp"
+            android:layout_weight="1"
+            android:background="@drawable/nav_buttons"
+            android:onClick="onAdd"
+            android:text="Add" />
+
+        <Button
+            android:id="@+id/calc"
+            android:layout_weight="1"
+            android:background="@drawable/nav_buttons"
+            android:layout_width="wrap_content"
+            android:layout_height="70sp"
+            android:onClick="onCalc"
+            android:text="Calculate" />
+        <Button
+            android:id="@+id/find"
+            android:layout_weight="1"
+            android:background="@drawable/nav_buttons"
+            android:layout_width="wrap_content"
+            android:layout_height="70sp"
+            android:onClick="onFind"
+            android:text="Find" />
+
+    </LinearLayout>
+
+
+
+
+</android.support.constraint.ConstraintLayout>

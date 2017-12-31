@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorProjectBackground"
+    tools:context="dev.android.dhoffman.finalproject.MainActivity">
+
+    <android.support.constraint.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.05"
+        android:orientation="vertical"
+        android:id="@+id/guide" />
+
+    <android.support.constraint.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.95"
+        android:orientation="vertical"
+        android:id="@+id/guideRight" />
+
+    <android.support.constraint.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.15"
+        android:orientation="horizontal"
+        android:id="@+id/guideH" />
+
+    <android.support.constraint.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.65"
+        android:orientation="horizontal"
+        android:id="@+id/guideHalf" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:text="Manage Receipts"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="35sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        app:layout_constraintTop_toBottomOf="@+id/place"
+        app:layout_constraintLeft_toLeftOf="@id/guide"
+        app:layout_constraintRight_toRightOf="@id/guideRight"
+        android:id="@+id/tagDate"
+        android:onClick="showDatePickerDialog"
+        android:layout_width="0sp"
+        android:layout_height="60sp"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/date_button"
+        android:text="Pick the Date of Purchase" />
+
+
+ <TextView
+     app:layout_constraintTop_toBottomOf="@+id/title"
+     app:layout_constraintLeft_toLeftOf="@id/guide"
+     app:layout_constraintRight_toRightOf="@+id/guideRight"
+     android:id="@+id/tagAmount"
+     android:textSize="25sp"
+     android:paddingTop="20sp"
+     android:textColor="@color/colorPrimaryDark"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:text="Enter Receipt Amount" />
+
+    <EditText
+        android:id="@+id/amount"
+        android:inputType="numberDecimal"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/tagAmount"
+        app:layout_constraintLeft_toLeftOf="@id/guide"
+        app:layout_constraintRight_toRightOf="@+id/guideRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        app:layout_constraintTop_toBottomOf="@+id/amount"
+        app:layout_constraintLeft_toLeftOf="@id/guide"
+        app:layout_constraintRight_toRightOf="@+id/guideRight"
+        android:textColor="@color/colorPrimaryDark"
+        android:id="@+id/tagPlace"
+        android:textSize="25sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter Receipt Place" />
+
+    <EditText
+        android:id="@+id/place"
+        android:inputType="text"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/tagPlace"
+        app:layout_constraintLeft_toLeftOf="@id/guide"
+        app:layout_constraintRight_toRightOf="@+id/guideRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        app:layout_constraintTop_toTopOf="@+id/guideHalf"
+        android:background="@drawable/line"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:onClick="insertBill"
+        android:layout_width="0sp"
+        android:layout_height="60sp"
+        android:textStyle="bold"
+        android:id="@+id/insert"
+        app:layout_constraintBottom_toTopOf="@+id/nav"
+        app:layout_constraintLeft_toLeftOf="@id/guide"
+        app:layout_constraintRight_toRightOf="@id/guideRight"
+        android:background="@drawable/date_button"
+        android:text="Enter Receipt" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/nav"
+        android:paddingTop="40sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:orientation="horizontal"
+        android:weightSum="3">
+        <Button
+            android:onClick="onCalculate"
+            android:layout_width="wrap_content"
+            android:layout_height="70sp"
+            android:background="@drawable/nav_buttons"
+            android:layout_weight="1"
+            android:text="Calculate" />
+        <Button
+            android:onClick="onFind"
+            android:layout_width="wrap_content"
+            android:layout_height="70sp"
+            android:background="@drawable/nav_buttons"
+            android:layout_weight="1"
+            android:text="Find" />
+
+        <Button
+            android:onClick="onDelete"
+            android:background="@drawable/date_button"
+            android:layout_weight="1"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="70sp"
+            android:text="Delete" />
+</LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

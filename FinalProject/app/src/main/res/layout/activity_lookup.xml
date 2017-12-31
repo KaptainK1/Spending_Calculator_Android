@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorProjectBackground"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="dev.android.dhoffman.finalproject.Lookup">
+
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/title"
+        android:textSize="35sp"
+        android:layout_marginBottom="10sp"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:background="@color/colorAccent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Find Receipts" />
+
+    <LinearLayout
+        android:id="@+id/monthSection"
+        android:layout_marginBottom="5sp"
+        android:paddingLeft="5sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+            android:text="Enter Month Number:"
+            android:id="@+id/tagMonth"
+            android:paddingEnd="10sp"
+            android:textSize="20sp"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="1"
+            android:id="@+id/month"
+            android:inputType="number" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_marginBottom="5sp"
+        android:id="@+id/yearSection"
+        android:paddingLeft="5sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+            android:text="Enter Year Number:"
+            android:id="@+id/tagYear"
+            android:textColor="@color/colorPrimaryDark"
+            android:paddingEnd="10sp"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="2018"
+            android:inputType="number"
+            android:id="@+id/year" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:weightSum="2"
+        android:layout_marginBottom="10sp"
+        android:paddingLeft="5sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_width="0sp"
+            android:layout_weight="1"
+            android:textStyle="bold"
+            android:layout_height="60sp"
+            android:id="@+id/buttonFind"
+            android:background="@drawable/date_button"
+            android:onClick="onFind"
+            android:text="Find Receipts" />
+        <Button
+            android:layout_width="0sp"
+            android:layout_weight="1"
+            android:layout_height="60sp"
+            android:background="@drawable/nav_buttons"
+            android:onClick="onReturn"
+            android:text="Return" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:weightSum="3"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/textAmount"
+            android:text="Amount"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"/>
+        <TextView
+            android:id="@+id/textPlace"
+            android:layout_width="0dp"
+            android:textSize="20sp"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
+            android:layout_height="wrap_content"
+            android:text="Place"
+            android:layout_weight="1"
+            android:gravity="center"/>
+        <TextView
+            android:id="@+id/textDay"
+            android:layout_width="0dp"
+            android:textSize="20sp"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
+            android:layout_height="wrap_content"
+            android:text="Day"
+            android:layout_weight="1"
+            android:gravity="center"/>
+    </LinearLayout>
+    <TableLayout
+        android:id="@+id/table"
+        android:weightSum="3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </TableLayout>
+
+
+</LinearLayout>
+
+
+</ScrollView>
